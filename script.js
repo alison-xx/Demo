@@ -114,6 +114,77 @@
     });
   });
 
+  // ===== 4.5 最新成交客户持续滚动 =====
+  (function ticker() {
+    const list = $('#tickerList');
+    if (!list) return;
+
+    const SURNAMES = ['王','李','张','刘','陈','杨','黄','赵','吴','周','徐','孙','马','胡','郭','林','何','高','罗','郑','梁','谢','宋','唐','许','韩','冯','邓','曹','彭'];
+    const CITIES = ['北京','上海','深圳','广州','杭州','成都','南京','武汉','西安','苏州','重庆','长沙','青岛','厦门','合肥','天津','宁波','无锡','郑州','佛山'];
+    const PRODUCTS = ['H100×8 算力礼包','A100×4 训练套餐','RTX4090 推理集群','大模型微调方案','AIGC 算力包','国产算力体验包','私有化部署咨询','100小时免费试用'];
+    const ACTIONS = ['刚刚领取了','成功开通了','预约咨询了','已签约获得','申请试用了'];
+    const COLORS = ['#7c3aed','#5b3df5','#e84393','#ff7a3d','#ff5d3d','#3da6ff','#13c2c2','#52c41a','#fa8c16','#eb2f96'];
+
+    const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+    const pick = a => a[Math.floor(Math.random() * a.length)];
+
+    function maskedPhone() {
+      const prefix = pick(['133','138','139','150','151','152','158','159','176','177','180','181','182','186','187','188','189','199']);
+      const tail = String(rand(0, 9999)).padStart(4, '0');
+      return `${prefix}****${tail}`;
+    }
+    function timeAgo() {
+      const r = Math.random();
+      if (r < 0.45) return `${rand(1, 59)}秒前`;
+      if (r < 0.85) return `${rand(1, 30)}分钟前`;
+      return `${rand(1, 5)}小时前`;
+    }
+    function buildRow() {
+      const surname = pick(SURNAMES);
+      const city = pick(CITIES);
+      const action = pick(ACTIONS);
+      const product = pick(PRODUCTS);
+      const phone = maskedPhone();
+      const color = pick(COLORS);
+      const t = timeAgo();
+      const li = document.createElement('li');
+      li.className = 'ticker__item';
+      li.innerHTML = `
+        <span class="ticker__avatar" style="background:${color}">${surname}</span>
+        <span class="ticker__phone">${phone}</span>
+        <span class="ticker__action">(${city}) ${action}</span>
+        <span class="ticker__product">${product}</span>
+        <span class="ticker__time">${t}</span>
+      `;
+      return li;
+    }
+
+    // 生成基础数据，并复制一份用于无缝循环
+    const BASE_COUNT = 12;
+    const base = [];
+    for (let i = 0; i < BASE_COUNT; i++) base.push(buildRow());
+    base.forEach(li => list.appendChild(li));
+    base.forEach(li => list.appendChild(li.cloneNode(true)));
+
+    // 根据条目数动态调整滚动时长（约每条 2s）
+    list.style.animationDuration = (BASE_COUNT * 2) + 's';
+
+    // 每隔一段时间替换一条最早的条目，让内容看起来"实时"更新
+    setInterval(() => {
+      const fresh = buildRow();
+      const firstSet = list.querySelectorAll('.ticker__item');
+      if (firstSet.length < BASE_COUNT * 2) return;
+      // 替换前半段第一条 + 后半段对应条，保持循环连贯
+      list.replaceChild(fresh, firstSet[0]);
+      list.replaceChild(fresh.cloneNode(true), firstSet[BASE_COUNT]);
+    }, 5000);
+
+    // 触摸时暂停，松开继续
+    list.addEventListener('touchstart', () => list.classList.add('paused'), { passive: true });
+    list.addEventListener('touchend', () => list.classList.remove('paused'));
+    list.addEventListener('touchcancel', () => list.classList.remove('paused'));
+  })();
+
   // ===== 5. 锚点平滑滚动 =====
   $$('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
