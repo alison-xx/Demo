@@ -5,266 +5,113 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no" />
   <title>灵策智算 - 一站式AI智能算力服务平台 | 限时免费试用</title>
-  <meta name="description" content="灵策智算 - 提供高性价比GPU算力租赁、大模型训练与推理、AIGC一站式解决方案，助力企业降本增效，立即领取免费算力试用礼包。" />
+  <meta name="description" content="灵策智算 - 高性价比GPU算力租赁、大模型训练与推理、AIGC一站式解决方案，立即领取免费算力试用礼包。" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="page">
 
-    <!-- ============== 1. 顶部 Hero ============== -->
-    <section class="hero">
-      <div class="hero__topbar">
-        <div class="hero__logo">
-          <span class="hero__logo-mark">灵</span>
-          <span class="hero__logo-text">灵策智算<br /><i>LingCe AI Compute</i></span>
-        </div>
-        <div class="hero__tag">官方认证</div>
+    <!-- ============== 1. 轮播图 ============== -->
+    <section class="carousel" aria-label="banner轮播">
+      <div class="carousel__track" id="carouselTrack">
+        <div class="carousel__slide"><img src="assets/img/banner-1.jpg" alt="灵策智算 banner 1" /></div>
+        <div class="carousel__slide"><img src="assets/img/banner-2.jpg" alt="灵策智算 banner 2" /></div>
       </div>
-
-      <div class="hero__title">
-        <h1>
-          一站式 <em>AI智能算力</em> 平台<br />
-          让大模型训练 <em>成本直降 60%</em>
-        </h1>
-        <p class="hero__sub">H100 / A100 / 国产算力<span class="dot">·</span>分钟级开通<span class="dot">·</span>7×24 专属服务</p>
+      <div class="carousel__dots" id="carouselDots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
       </div>
-
-      <ul class="hero__chips">
-        <li>💎 新客免费试用 100 小时</li>
-        <li>🚀 5 分钟极速部署</li>
-        <li>🛡️ 7×24 专家陪跑</li>
-      </ul>
-
-      <a href="#form" class="hero__cta">
-        <span>🎁 立即领取免费算力礼包</span>
-        <i>限今日 100 个名额 ›</i>
-      </a>
-
-      <div class="hero__trust">
-        已有 <b>12,800+</b> 企业接入 · 累计服务 <b>3.2亿</b> 训练小时
+      <div class="carousel__brand">
+        <span class="brand__mark">灵</span>
+        <span class="brand__name">灵策智算 · LingCe AI Compute</span>
       </div>
     </section>
 
-    <!-- ============== 2. 痛点 ============== -->
-    <section class="pain">
-      <h2 class="sec-title"><span>你是否还在被这些问题困扰？</span></h2>
-      <ul class="pain__list">
-        <li><i>💸</i><b>算力贵</b><p>自建机房动辄千万投入<br />GPU市场价居高不下</p></li>
-        <li><i>⏳</i><b>等不起</b><p>排队等卡数月<br />项目周期严重延误</p></li>
-        <li><i>🧩</i><b>难调优</b><p>环境配置复杂<br />分布式训练频繁报错</p></li>
-        <li><i>📉</i><b>没经验</b><p>缺少专家指导<br />模型效果迟迟不达标</p></li>
-      </ul>
-      <p class="pain__hint">👉 灵策智算 一站式解决所有问题</p>
-    </section>
-
-    <!-- ============== 3. 产品/服务介绍 ============== -->
-    <section class="products">
-      <h2 class="sec-title"><span>四大核心服务，全场景覆盖</span></h2>
-
-      <div class="prod-card prod-card--blue">
-        <div class="prod-card__num">01</div>
-        <h3>GPU算力租赁</h3>
-        <p>H100 / H800 / A100 / 4090 / 国产昇腾，按时按月灵活计费，最低 <b>¥1.98/小时</b> 起</p>
-        <ul>
-          <li>✓ 分钟级开通</li>
-          <li>✓ 整机 / 切片</li>
-          <li>✓ 弹性扩缩容</li>
-        </ul>
+    <!-- ============== 2. 表单 (上) ============== -->
+    <section class="form-block form-block--top">
+      <div class="form-block__head">
+        <h2>🎁 立即领取免费算力礼包</h2>
+        <p>新客专享 · 100 小时 H100/A100 免费试用</p>
       </div>
 
-      <div class="prod-card prod-card--purple">
-        <div class="prod-card__num">02</div>
-        <h3>大模型训练平台</h3>
-        <p>预置 LLaMA、Qwen、DeepSeek 等主流模型，<b>开箱即用</b>，分布式训练效率提升 3 倍</p>
-        <ul>
-          <li>✓ 一键 SFT / RLHF</li>
-          <li>✓ 断点续训</li>
-          <li>✓ 训练可视化</li>
-        </ul>
-      </div>
-
-      <div class="prod-card prod-card--pink">
-        <div class="prod-card__num">03</div>
-        <h3>推理加速服务</h3>
-        <p>自研推理引擎，吞吐提升 <b>5 倍</b>，单 Token 成本下降 <b>70%</b>，QPS 稳如磐石</p>
-        <ul>
-          <li>✓ vLLM / TensorRT</li>
-          <li>✓ 弹性并发</li>
-          <li>✓ 全球加速</li>
-        </ul>
-      </div>
-
-      <div class="prod-card prod-card--green">
-        <div class="prod-card__num">04</div>
-        <h3>AIGC行业解决方案</h3>
-        <p>金融、医疗、教育、电商、政企等 <b>20+ 行业</b> 模板，专家驻场陪跑</p>
-        <ul>
-          <li>✓ 智能客服</li>
-          <li>✓ 数字人</li>
-          <li>✓ 文生图/视频</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============== 4. 数据/优势 ============== -->
-    <section class="stats">
-      <h2 class="sec-title sec-title--light"><span>为什么 12,800+ 企业选择我们？</span></h2>
-      <div class="stats__grid">
-        <div><b>60%↓</b><span>训练综合成本</span></div>
-        <div><b>5×</b><span>推理吞吐提升</span></div>
-        <div><b>99.99%</b><span>SLA可用性</span></div>
-        <div><b>5min</b><span>极速开通</span></div>
-      </div>
-
-      <ul class="advs">
-        <li>
-          <div class="advs__ic">⚡</div>
-          <div><b>极速交付</b><p>分钟级开通，告别数月排队等卡</p></div>
-        </li>
-        <li>
-          <div class="advs__ic">💰</div>
-          <div><b>极致性价比</b><p>同等算力比公有云便宜 30%~60%</p></div>
-        </li>
-        <li>
-          <div class="advs__ic">🧠</div>
-          <div><b>专家陪跑</b><p>百人算法团队，7×24 一对一支持</p></div>
-        </li>
-        <li>
-          <div class="advs__ic">🔒</div>
-          <div><b>安全合规</b><p>等保三级 · ISO27001 · 数据加密</p></div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ============== 5. 应用场景 ============== -->
-    <section class="scenes">
-      <h2 class="sec-title"><span>适用于这些场景</span></h2>
-      <div class="scenes__grid">
-        <div class="scene"><i>🤖</i><b>大模型训练</b><p>从预训练到微调全链路</p></div>
-        <div class="scene"><i>🎨</i><b>AIGC创作</b><p>文生图/视频/数字人</p></div>
-        <div class="scene"><i>🎓</i><b>智慧教育</b><p>个性化辅导 / 智能批改</p></div>
-        <div class="scene"><i>🏥</i><b>智慧医疗</b><p>影像识别 / 辅助诊断</p></div>
-        <div class="scene"><i>🏦</i><b>金融风控</b><p>反欺诈 / 智能投顾</p></div>
-        <div class="scene"><i>🛒</i><b>电商零售</b><p>智能客服 / 商品推荐</p></div>
-      </div>
-    </section>
-
-    <!-- ============== 6. 客户案例 ============== -->
-    <section class="cases">
-      <h2 class="sec-title"><span>他们正在使用灵策智算</span></h2>
-      <div class="case">
-        <div class="case__head">
-          <div class="case__logo">某头部电商</div>
-          <span class="case__tag">推荐系统</span>
-        </div>
-        <p class="case__quote">"接入灵策推理服务后，QPS 从 800 提升到 4200，<b>单次推理成本下降 72%</b>，双11 平稳扛过流量高峰。"</p>
-        <div class="case__metric">
-          <div><b>5.2×</b><span>吞吐</span></div>
-          <div><b>-72%</b><span>成本</span></div>
-          <div><b>99.99%</b><span>稳定</span></div>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="case__head">
-          <div class="case__logo">某AI独角兽</div>
-          <span class="case__tag">大模型训练</span>
-        </div>
-        <p class="case__quote">"千卡集群一周完成调度，断点续训功能让我们节省了 <b>40% 的训练时间</b>，模型迭代速度大幅提升。"</p>
-        <div class="case__metric">
-          <div><b>1000+</b><span>卡集群</span></div>
-          <div><b>-40%</b><span>训练时长</span></div>
-          <div><b>3×</b><span>迭代速度</span></div>
-        </div>
-      </div>
-
-      <div class="case__logos">
-        <span>中国移动</span><span>招商银行</span><span>三一重工</span><span>新东方</span><span>美的集团</span><span>vivo</span>
-      </div>
-    </section>
-
-    <!-- ============== 7. 报价/活动 ============== -->
-    <section class="offer">
-      <div class="offer__badge">🔥 限时活动</div>
-      <h2>新客专享 · 0元试用大礼包</h2>
-      <ul class="offer__list">
-        <li><b>✓</b> 100小时 H100/A100 免费算力（价值 ¥3,980）</li>
-        <li><b>✓</b> 1对1 专属算法专家顾问咨询</li>
-        <li><b>✓</b> 行业大模型解决方案白皮书</li>
-        <li><b>✓</b> 全年最高 <em>30%</em> 充值返券</li>
-      </ul>
-      <p class="offer__count">⏰ 今日剩余名额 <em id="leftCount">37</em> / 100</p>
-    </section>
-
-    <!-- ============== 8. 表单 ============== -->
-    <section class="form" id="form">
-      <h2 class="sec-title sec-title--light"><span>免费领取算力礼包</span></h2>
-      <p class="form__sub">提交后 5 分钟内，专属顾问与您联系</p>
-
-      <form id="leadForm" class="form__box" novalidate>
+      <form class="lead-form" data-position="top" novalidate>
         <label class="field">
-          <span>您的称呼</span>
+          <span class="field__label">姓名</span>
           <input name="name" type="text" placeholder="请输入您的姓名" maxlength="20" required />
         </label>
         <label class="field">
-          <span>手机号码</span>
+          <span class="field__label">手机号</span>
           <input name="phone" type="tel" placeholder="请输入11位手机号" maxlength="11" inputmode="numeric" required />
         </label>
+        <button type="submit" class="lead-form__btn">
+          <span>立即免费领取 ›</span>
+        </button>
+        <p class="lead-form__safe">
+          🔒 信息加密 · 5 分钟内专属顾问联系您
+        </p>
+      </form>
+
+      <div class="badge-row">
+        <span>✓ 5分钟极速开通</span>
+        <span>✓ 7×24专家服务</span>
+        <span>✓ 国产&海外算力</span>
+      </div>
+    </section>
+
+    <!-- ============== 3. 海报图 ============== -->
+    <section class="poster" aria-label="产品海报">
+      <img src="assets/img/poster-1.jpg" alt="灵策智算 产品介绍海报" loading="lazy" />
+      <img src="assets/img/poster-2.jpg" alt="灵策智算 解决方案海报" loading="lazy" />
+    </section>
+
+    <!-- ============== 4. 表单 (下) ============== -->
+    <section class="form-block form-block--bottom" id="formBottom">
+      <div class="hot-tag">🔥 限今日 100 个名额，剩余 <em id="leftCount">37</em> 席</div>
+      <div class="form-block__head">
+        <h2>提交信息 · 0 元领取算力礼包</h2>
+        <p>专属顾问 1 对 1 服务 · 助您 AI 项目落地</p>
+      </div>
+
+      <form class="lead-form" data-position="bottom" novalidate>
         <label class="field">
-          <span>公司名称</span>
-          <input name="company" type="text" placeholder="请输入公司全称" maxlength="50" />
+          <span class="field__label">姓名</span>
+          <input name="name" type="text" placeholder="请输入您的姓名" maxlength="20" required />
         </label>
         <label class="field">
-          <span>感兴趣方向</span>
-          <select name="interest" required>
-            <option value="">请选择</option>
-            <option>GPU算力租赁</option>
-            <option>大模型训练</option>
-            <option>推理加速</option>
-            <option>AIGC行业方案</option>
-            <option>其他</option>
-          </select>
+          <span class="field__label">手机号</span>
+          <input name="phone" type="tel" placeholder="请输入11位手机号" maxlength="11" inputmode="numeric" required />
         </label>
 
         <label class="agree">
-          <input type="checkbox" id="agree" checked />
-          <span>我已阅读并同意 <a href="javascript:;">《用户协议》</a> 和 <a href="javascript:;">《隐私政策》</a></span>
+          <input type="checkbox" checked />
+          <span>我已阅读并同意 <a href="javascript:;">《用户协议》</a> 与 <a href="javascript:;">《隐私政策》</a></span>
         </label>
 
-        <button type="submit" class="form__btn">
-          🎁 立即领取免费礼包
+        <button type="submit" class="lead-form__btn lead-form__btn--lg">
+          <span>🎁 立即免费领取礼包</span>
         </button>
-        <p class="form__safe">🔒 信息加密传输，绝不外泄</p>
+        <p class="lead-form__safe">提交即代表您同意接收灵策智算的咨询服务</p>
       </form>
     </section>
 
-    <!-- ============== 9. FAQ ============== -->
-    <section class="faq">
-      <h2 class="sec-title"><span>常见问题</span></h2>
-      <details><summary>Q：免费试用包含什么？</summary><p>包含 100 小时 H100 / A100 任选 GPU 算力，可用于训练或推理，活动期内有效。</p></details>
-      <details><summary>Q：开通需要多久？</summary><p>提交申请后专属顾问 5 分钟内对接，最快 5 分钟即可开通完成。</p></details>
-      <details><summary>Q：支持哪些计费方式？</summary><p>支持按秒/按时/包月/包年/资源包，多种灵活计费组合。</p></details>
-      <details><summary>Q：数据安全如何保障？</summary><p>等保三级、ISO27001 认证，全链路加密传输与存储，并签订保密协议。</p></details>
-    </section>
-
-    <!-- ============== 10. 底部 ============== -->
+    <!-- ============== 底部 ============== -->
     <footer class="footer">
       <p class="footer__brand">灵策智算 · LingCe AI Compute</p>
       <p class="footer__txt">让 AI 算力触手可及</p>
-      <p class="footer__law">© 2026 灵策智算科技有限公司 · 京ICP备2024xxxxxx号</p>
+      <p class="footer__law">© 2026 灵策智算科技有限公司</p>
       <p class="footer__law">广告 · 内容仅供参考，最终以实际签约为准</p>
     </footer>
 
     <div class="bottom-space"></div>
   </main>
 
-  <!-- 悬浮CTA -->
-  <a href="#form" class="float-cta">
+  <!-- 悬浮 CTA -->
+  <a href="#formBottom" class="float-cta">
     <span class="float-cta__main">🎁 免费领取算力礼包</span>
     <span class="float-cta__sub">限今日 · 名额有限</span>
   </a>
 
-  <!-- 成功提示 -->
+  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
